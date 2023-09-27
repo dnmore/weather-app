@@ -1,0 +1,137 @@
+body {
+  margin: 0;
+  font-family: "Poppins", sans-serif;
+  font-size: 1rem;
+  color: white;
+  background-color: rgba(215, 240, 237, 0.7);
+}
+
+.btn {
+  font: inherit;
+  height: 2rem;
+  width: 6rem;
+  cursor: pointer;
+  border: 1px solid #085f99;
+  color: #085f99;
+  border-radius: 4px;
+}
+
+.btn-alt {
+  background-color: transparent;
+  border: none;
+  color: #085f99;
+}
+
+.modal {
+  position: fixed;
+  top: 20%;
+  left: 5%;
+  width: 80%;
+  background-color: #f7f7f8;
+  padding: 1rem;
+  border-radius: 6px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+  display: none;
+}
+
+#backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+  display: none;
+}
+
+#config-overlay {
+  text-align: center;
+}
+
+#config-overlay h2 {
+  margin: 0.5rem 0;
+  color: #3f4040;
+}
+
+.form-control {
+  margin: 0.5rem 0;
+  display: flex;
+  justify-content: center;
+}
+
+.form-control input {
+  font: inherit;
+  color: #3f4040;
+  border: 1px solid rgb(204, 204, 204);
+  width: 15rem;
+  padding: 0.35rem;
+  margin: 0 0.5rem;
+}
+
+.form-control select {
+  font: inherit;
+  color: #3f4040;
+  border: 1px solid rgb(204, 204, 204);
+}
+.wrapper {
+  max-width: 20rem;
+  margin: 1rem auto;
+  border: 1px solid #75cad6;
+  border-radius: 20px;
+  background-image: linear-gradient(
+    to right top,
+    #75cad6,
+    #81d5e0,
+    #8ee0ea,
+    #9aebf5,
+    #a6f6ff
+  );
+}
+
+#location-configuration {
+  width: 90%;
+  max-width: 20rem;
+  margin: 3rem auto;
+  text-align: center;
+}
+
+#location-configuration h1 {
+  font-size: 2rem;
+  margin: 0;
+  text-shadow: 0 2px 3px rgba(0, 0, 0, 0.3);
+}
+
+#weather-results {
+  width: 90%;
+  max-width: 20rem;
+  margin: 3rem auto;
+  text-align: center;
+
+}
+
+#weather-results p {
+  color: #071952;
+
+}
+
+.date {
+  background-color: #071952;
+  color: white;
+  border-radius: 6px;
+  padding: 0.5rem 0;
+
+}
+.main-content {
+  font-size: 5rem;
+
+  padding: 0;
+  color: white;
+  text-shadow: 0 2px 3px rgba(0, 0, 0, 0.3);
+}
+
+@media (min-width: 48rem) {
+  .modal {
+    left: calc(50% - 20rem);
+    width: 40rem;
+  }
+}

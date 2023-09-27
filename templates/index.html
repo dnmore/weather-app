@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../static/css/style.css" />
+    <script src="../static/js/modal.js" defer></script>
+    <title>Weather App</title>
+  </head>
+  <body>
+    <div id="backdrop"></div>
+    <aside class="modal" id="config-overlay">
+      <h2>Set location</h2>
+
+      <form action="{{ url_for('home')}}" method="post">
+        <div class="form-control">
+          <input
+            type="text"
+            name="city"
+            id="city"
+            placeholder="city"
+            required
+          />
+          <select name="state" id="state" required>
+            {% for state in all_states %}
+            <option>{{ state }}</option>
+            {% endfor %}
+          </select>
+        </div>
+
+        <div>
+          <button type="reset" class="btn btn-alt" id="cancel-config-btn">
+            Cancel
+          </button>
+          <button type="submit" class="btn">Confirm</button>
+        </div>
+      </form>
+    </aside>
+    <div class="wrapper">
+      <section id="location-configuration">
+        <article id="location-data">
+          <h1>{{ city }}</h1>
+
+          <button class="btn btn-alt" id="edit-location-btn">Edit</button>
+        </article>
+      </section>
+      <section id="weather-results">
+        <div class="date">{{ today }}</div>
+        <div class="main-content">{{ temperature }}</div>
+
+        <p>{{ summary }}</p>
+      </section>
+    </div>
+  </body>
+</html>
