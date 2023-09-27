@@ -23,4 +23,4 @@ function closeLocationConfig() {
 editLocationBtnElement.addEventListener("click", openLocationConfig);
 cancelConfigBtnElement.addEventListener("click", closeLocationConfig);
 backdropElement.addEventListener("click", closeLocationConfig);
-formElement.addEventListener("submit", saveLocationConfig);
+
