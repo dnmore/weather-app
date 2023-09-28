@@ -31,27 +31,31 @@ def home():
         geo_response = requests.get(GEO_ENDPOINT, params=geo_parameters)
         geo_response.raise_for_status()
         geo_data = geo_response.json()
-        latitude = geo_data[0]['lat']
-        longitude = geo_data[0]['lon']
-        current_w_parameters = {
-            "lat": latitude,
-            "lon": longitude,
-            "appid": api_key,
-            "units": "metric",
-            "exclude": "minutely, hourly, alerts"
+        try:
+            latitude = geo_data[0]['lat']
+            longitude = geo_data[0]['lon']
+        except IndexError:
+            return render_template("index.html", all_states=all_states, today=today, city="Invalid Location")
+        else:
+            current_w_parameters = {
+                "lat": latitude,
+                "lon": longitude,
+                "appid": api_key,
+                "units": "metric",
+                "exclude": "minutely, hourly, alerts"
 
-        }
+            }
 
-        weather_response = requests.get(CURRENT_W_ENDPOINT, params=current_w_parameters)
-        weather_response.raise_for_status()
-        weather_data = weather_response.json()
+            weather_response = requests.get(CURRENT_W_ENDPOINT, params=current_w_parameters)
+            weather_response.raise_for_status()
+            weather_data = weather_response.json()
 
-        description = weather_data['weather'][0]['description']
-        temperature = f"{int(weather_data['main']['temp'])}°"
-        feels_temp = int(weather_data['main']['feels_like'])
-        summary = f"Weather: {description}. Temperature is {temperature} and it feels likes {feels_temp}°"
-        return render_template("index.html", all_states=all_states, today=today, city=location,
-                               temperature=temperature, summary=summary)
+            description = weather_data['weather'][0]['description']
+            temperature = f"{int(weather_data['main']['temp'])}°"
+            feels_temp = int(weather_data['main']['feels_like'])
+            summary = f"Weather: {description}. Temperature is {temperature} and it feels likes {feels_temp}°."
+            return render_template("index.html", all_states=all_states, today=today, city=location,
+                                   temperature=temperature, summary=summary)
     else:
         return render_template("index.html", all_states=all_states, today=today, city="Location")
 
