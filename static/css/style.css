@@ -57,14 +57,16 @@ body {
   margin: 0.5rem 0;
   display: flex;
   justify-content: center;
+
+  
 }
 
 .form-control input {
   font: inherit;
   color: #3f4040;
   border: 1px solid rgb(204, 204, 204);
-  width: 15rem;
   padding: 0.35rem;
+  width: 40%;
   margin: 0 0.5rem;
 }
 
@@ -72,7 +74,22 @@ body {
   font: inherit;
   color: #3f4040;
   border: 1px solid rgb(204, 204, 204);
+  width: 40%;
+  margin: 0 0.5rem;
+
 }
+
+.form-control input:focus,
+.form-control select:focus {
+border: 1px solid #085f99;
+outline:none;
+}
+
+.form-control option {
+ font-size: 0.8rem;
+}
+
+
 .wrapper {
   max-width: 20rem;
   margin: 1rem auto;
@@ -136,4 +153,6 @@ body {
     left: calc(50% - 20rem);
     width: 40rem;
   }
+
+
 }
