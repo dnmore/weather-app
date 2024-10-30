@@ -1,18 +1,15 @@
 # Weather App
 
 ## Overview
-A desktop application that uses the OpenWeatherMap API to retrieve the current weather and temperature of a given location. The application is built with Flask.
+A desktop weather application that fetches and displays current weather details for any location. Using Flask and OpenWeatherMap API, this app provides an efficient and up-to-date weather overview.
 
-## Features
-* Fetch weather data by location
-* Display current temperature and weather conditions
+## 🔥 Features
+* Retrieve real-time weather by location
+* Display temperature and conditions
 
-## Tech Stack
+## 🛠️ Tech Stack
 * `Flask` – Web framework for Python
 * `OpenWeatherMap API`– Weather data provider
 
-### Preview
-![Preview](/preview.PNG)
-
-## License
+## 📜 License
 This project is licensed under the MIT License.
